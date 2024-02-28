@@ -8,37 +8,30 @@ public class Main3 {
         int[] arr = new int[arrLang];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 10);
+
         }
         System.out.println(Arrays.toString(arr));
+        //сортирую элементы массива , что бы проверять рядом стоящие элементы.
+        Arrays.sort(arr);
 
-        int maxValue = -1;
+        int maxCount = 0;
+        int maxRepetition = -1;
+
         for (int i = 0; i < arr.length; i++) {
-            if (maxValue < arr[i]) {
-                maxValue = arr[i];
+            int count = 0;
+            //&& использую для предотвращения выхода за границы массива,
+            // так как если i<arr.length-1, нет сысло проверять второе условие.
+            while (i < arr.length - 1 && arr[i] == arr[i + 1]) {
+                i++; //добавляю щетчик i вне цикла for
+                count++;
             }
-
-        }
-        int[] index = new int[maxValue + 1];
-        for (int num : arr) {
-            index[num]++;
-        }
-        int maxIndex = -1;
-        for (int i = 0; i < index.length; i++) {
-            if (maxIndex < index[i]) {
-                maxIndex = index[i];
-            }
-
-        }
-        if (maxIndex <= 1) {
-            System.out.println("there are no numbers that repeat more than 1 time");
-
-        } else {
-            for (int i = 0; i < index.length; i++) {
-                if (index[i] == maxIndex) {
-                    System.out.println("number " + i + " repeated " + maxIndex + " times.");
-                }
-
+            if (count > maxCount) {
+                maxCount = count;
+                maxRepetition = arr[i];
             }
         }
+        //теперь сюда можно всунуть Integer.MAX_VALUE
+        System.out.println(Arrays.toString(arr));
+        System.out.println(maxRepetition);
     }
 }
