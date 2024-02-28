@@ -33,5 +33,6 @@ public class Main3 {
         //теперь сюда можно всунуть Integer.MAX_VALUE
         System.out.println(Arrays.toString(arr));
         System.out.println(maxRepetition);
+
     }
 }
