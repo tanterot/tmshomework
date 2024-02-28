@@ -2,22 +2,22 @@ public class User {
     private String userName;
     private int experience;
     private Profession profession;
-
+//конструктор для создания объекта класса
     public User(String userName, int experience, Profession profession) {
         this.userName = userName;
         this.experience = experience;
         this.profession = profession;
 
     }
-
+//метод который выводит зарплату
     public void printSalary() {
         System.out.println(profession+ "," +userName+": salary = " + this.salary());
     }
-
+ //переопределенный метод с допоплатой
     public void printSalary(double dopoplata) {
         System.out.println(profession+ "," +userName+": salary + additional payment = " + this.salary(dopoplata));
     }
-
+//считаем зарплату , используем свич для работы с енамом
     private double salary() {
         double coefficient = 0;
         switch (profession) {
@@ -36,6 +36,8 @@ public class User {
         return salary;
 
     }
+//метод корорый считает ЗП+доплата , для уменьшения кода использовал this., так же добавил
+// проверку доплаты если значение отрицательное , ЗП остаеться без изменений.
 
     private double salary(double dopOplata) {
         double salary = this.salary();
@@ -46,7 +48,7 @@ public class User {
 
 
     }
-
+// гетеры и сетеры , для поля name только гетер , так как меняеться стаж и должность , но не имя.
     public String getUserName() {
         return userName;
     }
