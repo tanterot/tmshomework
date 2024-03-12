@@ -27,5 +27,6 @@ public class Main {
         System.out.println(director1.hasSubordinate("Sergei Andreevich"));
         // вывод-- the employee works for Dmitriy Dmitrievich
         //true
+        director1.printDetails(); //метод выводит всех сотрудников , и через рекурсию если в подчинении деректора их сотрудников
     }
 }

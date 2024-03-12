@@ -34,5 +34,14 @@ public class Director extends Employee {
         }
         return false;                                           //если не нашли
     }
+    public void printDetails() {                               //будут выводить сотрудников
+        System.out.println(this);
+        for (int i = 0; i < count; i++) {
+            System.out.println("  " + subordinates[i]);
+            if (subordinates[i] instanceof Director) {
+                ((Director) subordinates[i]).printDetails();
+            }
+        }
+    }
 }
 
