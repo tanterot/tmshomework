@@ -6,5 +6,6 @@ include 'Lesson4'
 include 'Lesson5'
 include 'Lesson6'
 include 'Lesson7-INTERFACE'
+include 'Lesson8_extends'
 include 'Lesson9_OOP'
 
