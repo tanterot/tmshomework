@@ -19,6 +19,7 @@ public class Director extends Employee {
         }
 
     }
+
     public boolean hasSubordinate(String name) {                 //метод ищет работника
         for (int i = 0; i < count; i++) {
             if (subordinates[i].getFullName().equals(name)) {     //есть ли работник с нужным именем
@@ -27,13 +28,14 @@ public class Director extends Employee {
             if (subordinates[i] instanceof Director) {          //проверяет вляеться ли работник деректором
                 Director d = (Director) subordinates[i];
                 if (d.hasSubordinate(name)) {                    //рекурсия ))  заходим в метоз сново и ищем сотрудников у директора
-                    System.out.println("the employee works for "+ d.getFullName());
-                    return true ;                                //если нашли
+                    System.out.println("the employee works for " + d.getFullName());
+                    return true;                                //если нашли
                 }
             }
         }
         return false;                                           //если не нашли
     }
+
     public void printDetails() {                               //будут выводить сотрудников
         System.out.println(this);
         for (int i = 0; i < count; i++) {
@@ -43,5 +45,17 @@ public class Director extends Employee {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("\nПодчиненные:\n");
+        for (Employee e : subordinates) {
+            sb.append("  ").append(e).append("\n");
+        }
+        return sb.toString();
+    }
 }
+
 

@@ -10,10 +10,10 @@ public class Main {
         Worker worker4 = new Worker("Sergei","Andreevich",10);
         Director director1 = new Director("Alex", "Petrov", 10, 10);
 
-        System.out.println(worker1);
-        System.out.println(worker2);
-        System.out.println(worker3);
-        System.out.println(director1);
+//        System.out.println(worker1);
+//        System.out.println(worker2);
+//        System.out.println(worker3);
+//        System.out.println(director1);
 
         director1.add(worker1);
         director1.add(worker2);
@@ -24,9 +24,11 @@ public class Main {
 
         director1.add(director2);
 
-        System.out.println(director1.hasSubordinate("Sergei Andreevich"));
+//        System.out.println(director1.hasSubordinate("Sergei Andreevich"));
         // вывод-- the employee works for Dmitriy Dmitrievich
         //true
-        director1.printDetails(); //метод выводит всех сотрудников , и через рекурсию если в подчинении деректора их сотрудников
+//        director1.printDetails(); //метод выводит всех сотрудников , и через рекурсию если в подчинении деректора их сотрудников
+        System.out.println(director1);
     }
+
 }
