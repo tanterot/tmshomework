@@ -1,12 +1,9 @@
 import java.io.*;
 public class TestIO {
     public static void main(String[] args) {
-        String sourceFile = "C:\\JAVA\\R&J.txt";
-        String romeoFile = "C:\\JAVA\\Romeo.txt";
-        String julietFile = "C:\\JAVA\\Juliet.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(sourceFile));
-             PrintWriter romeoWriter = new PrintWriter(new FileWriter(romeoFile));
-             PrintWriter julietWriter = new PrintWriter(new FileWriter(julietFile))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\JAVA\\R&J.txt"));
+             PrintWriter romeoWriter = new PrintWriter(new FileWriter("C:\\JAVA\\Romeo.txt"));
+             PrintWriter julietWriter = new PrintWriter(new FileWriter("C:\\JAVA\\Juliet.txt"))) {
 
             String line;
             boolean isRomeo = false;
@@ -26,10 +23,10 @@ public class TestIO {
                     }
                 }
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("exception input/output: " + e.getMessage());
+        } catch (FileNotFoundException exc) {
+            System.out.println("File not found: " + exc.getMessage());
+        } catch (IOException exc) {
+            System.out.println("exception input/output: " + exc.getMessage());
         }
     }
 }
