@@ -9,6 +9,5 @@ include 'Lesson7-INTERFACE'
 include 'Lesson8_extends'
 include 'Lesson9_OOP'
 include 'Lesson10'
-include 'Lesson12_Exp'
+include 'Lesson11_String'
 include 'Lesson12_exc'
-
