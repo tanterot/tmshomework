@@ -17,3 +17,6 @@ include 'Lesson14_List'
 include 'Lesson14_fix_list'
 include 'Lesson14_list_fix'
 
+
+include 'Lesson15_Set'
+
