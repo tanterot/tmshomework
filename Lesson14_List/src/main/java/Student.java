@@ -1,10 +1,10 @@
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.*;
-
+import java.util.List;
 @Data
 @AllArgsConstructor
+
 public class Student {
     private String name;
     private boolean isMan;
@@ -13,10 +13,11 @@ public class Student {
 
     @Override
     public String toString() {
-        if (isMan){
-            return "NAME- "+name+" AGE- "+age+" is MAN, electives: "+classes;
-        }else {
-            return "NAME- "+name+" AGE- "+age+" is WOMAN, electives: "+classes;
+        if (isMan) {
+            return "NAME- " + name + " AGE- " + age + " is MAN, electives: " + classes;
+        } else {
+            return "NAME- " + name + " AGE- " + age + " is WOMAN, electives: " + classes;
         }
+
     }
 }
