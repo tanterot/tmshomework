@@ -20,5 +20,6 @@ public class TestMain {
         System.out.println("MAN: " + males);
         System.out.println(">2 Classes " + studentsWithLessThan2Classes);
         System.out.println("Programiming " + studentsWhoAttendProgramming);
+
     }
 }
