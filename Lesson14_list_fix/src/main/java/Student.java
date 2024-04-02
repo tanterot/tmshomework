@@ -13,11 +13,8 @@ public class Student {
 
     @Override
     public String toString() {
-        if (isMan) {
-            return "NAME- " + name + " AGE- " + age + " is MAN, electives: " + classes;
-        } else {
-            return "NAME- " + name + " AGE- " + age + " is WOMAN, electives: " + classes;
-        }
+        String gender = (isMan) ? " is MAN" : " is WOMEN";
+        return "NAME- " + name + " AGE- " + age + gender + " electives: " + classes;
     }
 }
 

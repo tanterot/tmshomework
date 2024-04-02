@@ -12,7 +12,7 @@ public class Methods {
         List<Student> males = new ArrayList<>();
         if (students != null) {
             for (Student student : students) {
-                if (student != null && student.getClasses() != null && student.isMan()) {
+                if (student.isMan()) {
                     males.add(student);
                 }
             }
@@ -24,7 +24,7 @@ public class Methods {
         List<Student> olderStudents = new ArrayList<>();
         if (students != null) {
             for (Student student : students) {
-                if (student != null && student.getClasses() != null && student.getAge() > 20) {
+                if (student.getAge() > 20) {
                     olderStudents.add(student);
                 }
             }
@@ -36,8 +36,12 @@ public class Methods {
         List<Student> lessClassesStudents = new ArrayList<>();
         if (students != null) {
             for (Student student : students) {
-                if (student != null && student.getClasses() != null && student.getClasses().size() < 2) {
-                    lessClassesStudents.add(student);
+                if (student.getClasses() != null) {
+                    for (String clas : student.getClasses())
+                        if (clas != null && !student.getClasses().contains(null) && student.getClasses().size() < 2) {
+
+                            lessClassesStudents.add(student);
+                        }
                 }
             }
         }
@@ -45,14 +49,20 @@ public class Methods {
     }
 
     public List<Student> getStudentsWhoAttendProgramming(List<Student> students) {
-        List<Student> programmingStudents = new ArrayList<>();
+        List<Student> programingStudents = new ArrayList<>();
         if (students != null) {
             for (Student student : students) {
-                if (student != null && student.getClasses() != null && student.getClasses().contains("programing")) {
-                    programmingStudents.add(student);
+                if (student.getClasses() != null && !student.getClasses().isEmpty()) {
+                    for (String clas : student.getClasses()) {
+                        if (clas != null && clas.equals("programing")) {
+                            programingStudents.add(student);
+                            break;
+                        }
+                    }
+
                 }
             }
         }
-        return programmingStudents;
+        return programingStudents;
     }
 }
