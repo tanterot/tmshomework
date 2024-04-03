@@ -40,13 +40,3 @@ public class Methods {
         return uniqe;
     }
 }
-
-
-//Unique user names:
-//Set<String> uniqueNames = new HashSet<>();
-//   for (User user : users) {
-//  uniqueNames.add(user.name);
-//}
-//   for (String name : uniqueNames) {
-//  System.out.println(name);
-//}
