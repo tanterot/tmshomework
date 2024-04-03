@@ -18,7 +18,7 @@ public class Main {
         System.out.println(experience);
         Set<User> sort = methods.sortExperienceSet(users);
         System.out.println(sort);
-        Set<User> uniqe = methods.uniqeNames(users);
+        Set<String> uniqe = methods.uniqeNames(users);
         System.out.println(uniqe);
     }
 }

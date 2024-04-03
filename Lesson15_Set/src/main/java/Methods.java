@@ -20,8 +20,7 @@ public class Methods {
         }
         return user;
     }
-
-    //сортировка для уникальных пользователей
+//сортировка для уникальных пользователей
     public Set<User> sortExperienceSet(List<User> user) {
         Set<User> sort = new TreeSet<>();
         if (user != null) {
@@ -30,12 +29,24 @@ public class Methods {
 
         return sort;
     }
+    public Set<String> uniqeNames(List<User> user){
+        Set<String> uniqe = new HashSet<>();
+        if (user != null){
+            for(User users: user){
+                uniqe.add(users.getName());
+            }
 
-    public Set<User> uniqeNames(List<User> user) {
-        Set<User> uniqe = new HashSet<>();
-        if (user != null) {
-            uniqe.addAll(user);
         }
         return uniqe;
     }
 }
+
+
+//Unique user names:
+//Set<String> uniqueNames = new HashSet<>();
+//   for (User user : users) {
+//  uniqueNames.add(user.name);
+//}
+//   for (String name : uniqueNames) {
+//  System.out.println(name);
+//}
