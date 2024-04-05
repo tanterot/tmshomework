@@ -1,3 +1,5 @@
+package com.task16.method;
+
 import java.util.*;
 
 public class Methods {
@@ -18,11 +20,13 @@ public class Methods {
 
     public Map<String, String> firstEndChar(String[] arr) {
         Map<String, String> feChar = new HashMap<>();
-        for (String str : arr) {
-            feChar.put(str.substring(0, 1), str.substring(str.length() - 1));
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null) {
+                String str = arr[i];
+                feChar.put(str.substring(0, 1), str.substring(str.length() - 1));
+            }
         }
         return feChar;
 
     }
 }
-
