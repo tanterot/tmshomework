@@ -1,8 +1,9 @@
-package com.tms.task;
+package com.tms.task.runner;
 
-import java.util.function.Supplier;
+import com.tms.task.method.Converter;
+import com.tms.task.method.MethodReplace;
 
-public class Main {
+public class Runner {
     public static void main(String[] args) {
 //------------------------------------------------------------------------- task1
         Converter converter = new Converter();
