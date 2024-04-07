@@ -1,17 +1,23 @@
 package com.tms.task.method;
 
+import com.tms.task.util.Constant;
+
 import java.util.function.Consumer;
 import java.util.function.Function;
-
-//конвертация валюты первый метод имеет возврощаемое значение Double второй метод void;
+/*
+конвертация валюты первый метод имеет возврощаемое значение Double второй метод void;
+static так как нет полей класса и есть только методы
+ */
 public class Converter {
-    Double USD = 3.28;
+
     //хочеться добавить проверку на null , но код не очень будет похож на функцию
     //if(BYN==null){return null}
-    public Function<String, Double> parseBYNtoUSD = BYN -> Double.parseDouble(BYN) / USD;
+    public static Function<String, Double> parseBYNtoUSD = BYN ->
+            Double.parseDouble(BYN) / Constant.USD;
 
 
     //if(BYN != null)
-    public Consumer<String> parseConsumerBYNtoUSD = BYN -> System.out.println(Double.parseDouble(BYN) / USD);
+    public static Consumer<String> parseConsumerBYNtoUSD = BYN ->
+            System.out.println(Double.parseDouble(BYN) / Constant.USD);
 
 }
