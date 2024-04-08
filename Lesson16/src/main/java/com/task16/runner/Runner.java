@@ -1,6 +1,6 @@
 package com.task16.runner;
 
-import com.task16.method.Methods;
+import com.task16.fabric.Fabric;
 
 import java.util.Map;
 
@@ -10,11 +10,10 @@ public class Runner {
         String[] str1 = {"code", "bug"};
 
         //----------------------------------------- task1
-        Methods methods = new Methods();
-        Map<String, Boolean> resultArr = methods.returnArr(str);
+        Map<String, Boolean> resultArr = Fabric.returnMapFromArray(str);
         System.out.println(resultArr);
         //----------------------------------------- task2
-        Map<String, String> resultArr1 = methods.firstEndChar(str1);
+        Map<String, String> resultArr1 = Fabric.returnFirstCharKeyLastCharValue(str1);
         System.out.println(resultArr1);
     }
 }
