@@ -7,10 +7,10 @@ import com.tms.task.util.Constant;
 public class Runner {
     public static void main(String[] args) {
 //------------------------------------------------------------------------- task1
-        Double apply = Converter.parseBYNtoUSD.apply(Constant.BYN);
+        Double apply = Converter.parseBYNtoUSD.apply("328 BYN");
         System.out.println(apply);
 //------------------------------------------------------------------------- task2
-        Converter.parseConsumerBYNtoUSD.accept(Constant.BYN);
+        Converter.parseConsumerBYNtoUSD.accept("1000 BYN");
 //------------------------------------------------------------------------- task3
         String s = MethodReplace.replaceString.get();
         System.out.println(s);
