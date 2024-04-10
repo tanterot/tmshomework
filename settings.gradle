@@ -14,4 +14,5 @@ include 'Lesson12_exc'
 include 'Lesson13_IO'
 include 'Lesson14_list_fix'
 include 'Lesson15_Set'
+include 'Lesson16'
 
