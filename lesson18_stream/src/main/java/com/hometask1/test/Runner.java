@@ -71,18 +71,20 @@ public class Runner {
 //        System.out.println(nameManufacturer);
 
         //6) найти все магазины конкретного города
-        List<Integer> shopInCity = product.stream()
-                .filter(prod -> "Minsk".equals(prod.getShop().getCity()))
-                .map(prod -> prod.getShop().getNumber())
+        List<Integer> numberShop = product.stream()
+                .map(Product::getShop)
+                .filter(a -> a.getCity().equals("Minsk"))
+                .map(Shop::getNumber)
                 .toList();
-//        System.out.println(shopInCity);
+//        System.out.println(numberShop);
 
         //7) найти адрес магазина по указанному номеру телефона
-        List<String> adressToPhone = product.stream()
-                .filter(prod -> "+375298889900".equals(prod.getShop().getPhoneNumber()))
-                .map(product1 -> product1.getShop().getAddress())
+        List<String> addressToPhone = product.stream()
+                .map(Product::getShop)
+                .filter(a -> a.getPhoneNumber().equals("+375298889900"))
+                .map(Shop::getAddress)
                 .toList();
-//        System.out.println(adressToPhone);
+        System.out.println(addressToPhone);
 
         //8) все товары указанного номера магазина
         List<String> list = product.stream()

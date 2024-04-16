@@ -3,13 +3,13 @@ package com.hometask2;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
 public class Runner {
     public static void main(String[] args) {
         //среднее значение первых 10 чисел
-        OptionalDouble average = Stream.iterate(1, val -> val + 1)
-                .mapToDouble(val -> val)
+        OptionalDouble average = DoubleStream.iterate(1, val -> val + 1)
                 .limit(10)
                 .average();
 //        System.out.println(average);
@@ -29,6 +29,8 @@ public class Runner {
                 .limit(10)
                 .sum();
 //        System.out.println(sum);
+
+
 
 
     }
