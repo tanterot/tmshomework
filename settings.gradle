@@ -15,4 +15,5 @@ include 'Lesson13_IO'
 include 'Lesson14_list_fix'
 include 'Lesson15_Set'
 include 'Lesson16'
+include 'lesson18_stream'
 
