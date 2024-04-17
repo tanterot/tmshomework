@@ -7,7 +7,7 @@ import com.tms.task.util.Constant;
 public class Runner {
     public static void main(String[] args) {
 //------------------------------------------------------------------------- task1
-        Double apply = Converter.parseBYNtoUSD.apply("328 BYN");
+        String apply = Converter.parseBYNtoUSD.apply("328 BYN");
         System.out.println(apply);
 //------------------------------------------------------------------------- task2
         Converter.parseConsumerBYNtoUSD.accept("1000 BYN");
