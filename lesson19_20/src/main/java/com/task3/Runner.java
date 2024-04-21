@@ -1,5 +1,9 @@
 package com.task3;
 
+/**
+ * Создать поток демон и проверить его работу
+ */
+
 public class Runner {
     public static void main(String[] args) {
         Thread thread = new Thread(()-> {
