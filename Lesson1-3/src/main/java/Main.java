@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * пользователь вводит число с консоли , необходимо вывести сколько сотен тысяч и тд
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

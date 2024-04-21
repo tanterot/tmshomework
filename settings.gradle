@@ -17,4 +17,6 @@ include 'Lesson15_Set'
 include 'Lesson16'
 include 'lesson18_stream'
 include 'lesson17_lambda'
+include 'lesson19_thred'
+include 'lesson19_20'
 

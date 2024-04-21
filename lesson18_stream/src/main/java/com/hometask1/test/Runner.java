@@ -35,19 +35,19 @@ public class Runner {
                 .mapToDouble(Product::getCost)
                 .min()
                 .getAsDouble();
-//        System.out.println(vMin);
+        System.out.println(vMin);
 
         Double vMax = product.stream()
                 .mapToDouble(Product::getCost)
                 .max()
                 .getAsDouble();
-//        System.out.println(vMax);
+        System.out.println(vMax);
 
         //2) найти все товары которые возможно доставить до покупателя
         List<Product> collect = product.stream()
                 .filter(Product::isDelivery)
                 .toList();
-//        System.out.println(collect);
+        System.out.println(collect);
 
         //3) посчитать среднюю стоимость товара указанной категории
         double avrage = product.stream()
@@ -55,20 +55,20 @@ public class Runner {
                 .mapToDouble(Product::getCost)
                 .average()
                 .getAsDouble();
-//        System.out.println(avrage);
+        System.out.println(avrage);
 
         //4) найти все товары определенного производителя
         List<Product> collect1 = product.stream()
                 .filter(product1 -> "apple".equals(product1.getManufacturer().getName()))
                 .toList();
-//        System.out.println(collect1);
+        System.out.println(collect1);
 
         //5) найти всех названия производителей указанной страны
         List<String> nameManufacturer = product.stream()
                 .filter(product1 -> "China".equals(product1.getManufacturer().getCountry()))
                 .map(prod -> prod.getManufacturer().getName())
                 .toList();
-//        System.out.println(nameManufacturer);
+        System.out.println(nameManufacturer);
 
         //6) найти все магазины конкретного города
         List<Integer> numberShop = product.stream()
@@ -76,7 +76,7 @@ public class Runner {
                 .filter(a -> a.getCity().equals("Minsk"))
                 .map(Shop::getNumber)
                 .toList();
-//        System.out.println(numberShop);
+        System.out.println(numberShop);
 
         //7) найти адрес магазина по указанному номеру телефона
         List<String> addressToPhone = product.stream()
@@ -91,34 +91,34 @@ public class Runner {
                 .filter(prod -> prod.getShop().getNumber() == 3)
                 .map(Product::getName)
                 .toList();
-//        System.out.println(list);
+        System.out.println(list);
 
         //9) составить map где ключ это номер магазина, а значение - это номер телефона данного магазина
         Map<Integer, String> collect2 = product.stream()
                 .collect(Collectors.toMap(product1 -> product1.getShop().getNumber()
                         , product2 -> product2.getShop().getPhoneNumber()
                         ,(key1, key2)-> key1));
-//        System.out.println(collect2);
+        System.out.println(collect2);
 
         //10) узнать все ли товары указанной категории можно доставить до покупателя
         boolean b = product.stream()
                 .filter(product1 -> product1.getCategory() == Category.ELECTRONIC)
                 .allMatch(Product::isDelivery);
-//        System.out.println(b);
+        System.out.println(b);
 
         //11) посчитать количество магазинов
         long numberOfStore = product.stream()
                 .map(product1 -> product1.getShop().getNumber())
                 .distinct()
                 .count();
-//        System.out.println(numberOfStore);
+        System.out.println(numberOfStore);
 
         //12) вывести товары отсортированные по стоимости (от большего к меньшему)
         List<String> list1 = product.stream()
                 .sorted((product1, product2) -> (int) (product2.getCost() - product1.getCost()))
                 .map(product1 -> product1.getName())
                 .toList();
-//        System.out.println(list1);
+        System.out.println(list1);
 
 
     }
