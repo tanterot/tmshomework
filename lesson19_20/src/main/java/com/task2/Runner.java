@@ -20,8 +20,8 @@ public class Runner {
         threadMin.join();
         threadMax.join();
 
-        System.out.println("min value: " + myThreadMinValue.getMinValue());
-        System.out.println("max value: "+ myThreadMaxValue.getMaxValue());
+        System.out.println("min value: " + myThreadMinValue.getMin());
+        System.out.println("max value: "+ myThreadMaxValue.getMax());
 
 
     }

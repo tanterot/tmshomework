@@ -1,5 +1,4 @@
 package com.task4;
-
 public class MyThread2 extends Thread{
     Marker marker;
 
@@ -10,9 +9,11 @@ public class MyThread2 extends Thread{
     @Override
     public void run() {
         while (true){
-            System.out.println("2");
-            System.out.println("2");
-            System.out.println("2");
+            synchronized (marker) {
+                System.out.println("2");
+                System.out.println("2");
+                System.out.println("2");
+            }
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {

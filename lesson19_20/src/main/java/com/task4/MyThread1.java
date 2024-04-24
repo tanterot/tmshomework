@@ -9,18 +9,18 @@ public class MyThread1 extends Thread {
 
     @Override
     public void run() {
-        synchronized (marker) {
-            while (true) {
+        while (true) {
+            synchronized (marker) {
                 System.out.println("1");
                 System.out.println("1");
                 System.out.println("1");
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+            }
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
-
     }
 }
+

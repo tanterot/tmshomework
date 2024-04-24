@@ -2,9 +2,11 @@ package com.task2;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 public class MyThreadMinValue implements Runnable {
     @Getter
-    private int minValue= Integer.MAX_VALUE;
+    private int min;
     private int[] values;
 
     public MyThreadMinValue(int[] values) {
@@ -13,9 +15,9 @@ public class MyThreadMinValue implements Runnable {
 
     @Override
     public void run() {
-        for (Integer value: values){
-            minValue = Math.min(minValue, value);
-        }
-    }
+        min = Arrays.stream(values)
+                .min()
+                .orElse(Integer.MAX_VALUE);
 
+    }
 }

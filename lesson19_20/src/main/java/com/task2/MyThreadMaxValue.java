@@ -2,9 +2,11 @@ package com.task2;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 public class MyThreadMaxValue implements Runnable {
     @Getter
-    private int maxValue = Integer.MIN_VALUE;
+    private int max;
     private int[] values;
 
     public MyThreadMaxValue(int[] values) {
@@ -13,8 +15,9 @@ public class MyThreadMaxValue implements Runnable {
 
     @Override
     public void run() {
-        for (Integer value : values){
-            maxValue = Math.max(maxValue,value);
-        }
+        max = Arrays.stream(values)
+                .max()
+                .orElse(Integer.MIN_VALUE);
+
     }
 }
