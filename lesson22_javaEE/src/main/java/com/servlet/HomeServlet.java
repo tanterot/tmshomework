@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class HomeServlet extends HttpServlet {
 
-    Date date  =new Date();
+
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -28,6 +28,7 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Date date  =new Date();
         System.out.println("Get");
         PrintWriter writer = resp.getWriter();
         writer.println("now date: "+ date);
