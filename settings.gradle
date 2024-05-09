@@ -22,4 +22,5 @@ include 'lesson19_20'
 include 'lesson21_project_builder'
 include 'lesson22_javaEE'
 include 'lesson23_servlet'
+include 'lesson24_html_css'
 
