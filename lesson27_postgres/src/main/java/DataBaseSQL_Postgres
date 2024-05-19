@@ -8,10 +8,10 @@ CREATE TABLE orders(
 
 INSERT INTO orders (id,titleOrder,dataOrder,numberOfProduct,costOrder,delivery)
 values (1,'magic book x14','2024-05-17',10,'$500',true),
-       (2,'magic book x16','2024-05-18',10,'$550',true);
-       (3,'magic book x14 pro','2024-06-18',10,'$600',true);
-       (4,'magic book x16 pro','2024-06-19',10,'$650',true);
-       (5,'magic book x16 plus','2024-05-18',10,'$750',false)
+       (2,'magic book x16','2024-05-18',10,'$550',true),
+       (3,'magic book x14 pro','2024-06-18',10,'$600',true),
+       (4,'magic book x16 pro','2024-06-19',10,'$650',true),
+       (5,'magic book x16 plus','2024-05-18',10,'$750',false);
 
 ALTER TABLE orders RENAME COLUMN delivery TO isDelivery;
 
