@@ -1,0 +1,69 @@
+-- Создание таблиц
+CREATE TABLE Person (
+                        id SERIAL PRIMARY KEY,
+                        name VARCHAR,
+                        gender CHAR(1),
+                        birth_date DATE
+);
+
+CREATE TABLE HobbyType (
+                           id SERIAL PRIMARY KEY,
+                           name VARCHAR
+);
+
+CREATE TABLE Hobby (
+                       id SERIAL PRIMARY KEY,
+                       name VARCHAR,
+                       type_id INT,
+                       FOREIGN KEY (type_id) REFERENCES HobbyType(id)
+);
+
+CREATE TABLE PersonHobby (
+                             person_id INT,
+                             hobby_id INT,
+                             PRIMARY KEY (person_id, hobby_id),
+                             FOREIGN KEY (person_id) REFERENCES Person(id),
+                             FOREIGN KEY (hobby_id) REFERENCES Hobby(id)
+);
+
+-- Заполнение таблиц
+INSERT INTO Person (name, gender, birth_date)
+VALUES ('Иван', 'M', '1980-01-01'),
+       ('Анна', 'F', '1985-02-02'),
+       ('Сергей', 'M', '1990-03-03'),
+       ('Ольга', 'F', '1995-04-04'),
+       ('Алексей', 'M', '2000-05-05'),
+       ('Мария', 'F', '2005-06-06'),
+       ('Дмитрий', 'M', '2000-07-07'),
+       ('Елена', 'F', '2007-08-08'),
+       ('Николай', 'M', '2002-09-09'),
+       ('Татьяна', 'F', '2005-10-10');
+
+INSERT INTO HobbyType (name)
+VALUES ('Активное'), ('Спокойное');
+
+INSERT INTO Hobby (name, type_id)
+VALUES ('Футбол', 1), ('Хоккей', 1), ('Чтение', 2), ('Рисование', 2), ('Плавание', 1), ('Медитация', 2);
+
+INSERT INTO PersonHobby (person_id, hobby_id)
+VALUES (1, 1), (1, 2), (1, 3), (2, 3), (3, 1), (4, 2), (5, 3), (6, 4), (7, 1), (8, 2), (9, 3), (10, 4);
+
+-- Запросы
+SELECT * FROM Person WHERE birth_date < CURRENT_DATE - INTERVAL '30 years'; -- Все люди старше 30 лет
+
+SELECT gender, COUNT(*) FROM Person GROUP BY gender; -- Количество людей каждого пола
+
+SELECT P.name, H.name FROM Person P JOIN PersonHobby PH ON P.id = PH.person_id JOIN Hobby H ON H.id = PH.hobby_id; -- Информация о людях и их хобби
+
+SELECT P.name FROM Person P JOIN PersonHobby PH ON P.id = PH.person_id GROUP BY P.name HAVING COUNT(PH.hobby_id) > 1; -- Люди с более чем одним хобби
+
+SELECT HT.name, COUNT(*) FROM Hobby H JOIN HobbyType HT ON H.type_id = HT.id GROUP BY HT.name; -- Количество активных и пассивных хобби
+
+SELECT H.name, HT.name FROM Hobby H JOIN HobbyType HT ON H.type_id = HT.id; -- Информация о том, какое хобби активное, а какое пассивное
+
+
+-- Удаление таблиц
+DROP TABLE PersonHobby;
+DROP TABLE Hobby;
+DROP TABLE HobbyType;
+DROP TABLE Person;
