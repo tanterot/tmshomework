@@ -23,4 +23,7 @@ include 'lesson21_project_builder'
 include 'lesson22_javaEE'
 include 'lesson23_servlet'
 include 'lesson24_html_css'
+include 'lesson26_jsp'
+include 'lesson27_postgres'
+include 'lesson28_SQL'
 
