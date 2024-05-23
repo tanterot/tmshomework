@@ -1,0 +1,28 @@
+CREATE TABLE orders
+(
+    id              INT PRIMARY KEY,
+    titleOrder      VARCHAR,
+    dataOrder       DATE,
+    numberOfProduct INT,
+    costOrder       money,
+    delivery        BOOLEAN
+);
+
+INSERT INTO orders (id, titleOrder, dataOrder, numberOfProduct, costOrder, delivery)
+values (1, 'magic book x14', '2024-05-17', 10, '$500', true),
+       (2, 'magic book x16', '2024-05-18', 11, '$550', true),
+       (3, 'magic book x14 pro', '2024-06-18', 12, '$600', true),
+       (4, 'magic book x16 pro', '2024-06-19', 13, '$650', true),
+       (5, 'magic book x16 plus', '2024-05-18', 14, '$750', false);
+
+ALTER TABLE orders RENAME COLUMN delivery TO isDelivery;  --- изменить имя колонки с, на
+
+UPDATE orders set costOrder = '$530' WHERE titleOrder = 'magic book x14'; ---установить новую стоимость заказа
+
+SELECT * FROM orders; ---вывести все заказы
+
+SELECT dataOrder FROM orders; --- вывести только даты всех заказов
+
+DELETE FROM orders WHERE costOrder > '$600'; --- удалить заказы стоимость которых юольще $600
+
+DROP TABLE orders;  --- удалить таблицу заказы
