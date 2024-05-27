@@ -45,6 +45,7 @@ public class DataBaseService {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         Film map = filmMapper.map(resultSet,true);
+        connection.close();
         return map;
     }
 
@@ -69,6 +70,7 @@ public class DataBaseService {
         preparedStatement.setObject(5,id);
 
         preparedStatement.execute();
+        connection.close();
 
     }
 
