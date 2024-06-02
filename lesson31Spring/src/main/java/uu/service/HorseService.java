@@ -2,6 +2,7 @@ package uu.service;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 import uu.model.Horse;
 
@@ -19,7 +20,9 @@ public class HorseService {
         System.out.println("List of horses:");
         IntStream.range(0, horses.size())
                 .forEach(i -> System.out.println((i + 1) + ". " + horses.get(i).getName()));
+
     }
+
 
     public Horse getHorse(int horseNum) {
         return horses.get(horseNum - 1);

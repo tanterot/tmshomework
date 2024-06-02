@@ -2,6 +2,7 @@ package uu.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import uu.model.Horse;
 import uu.model.User;
 import uu.service.HorseProviderService;

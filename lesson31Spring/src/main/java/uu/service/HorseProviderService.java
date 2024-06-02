@@ -19,5 +19,6 @@ public class HorseProviderService {
                 new Horse("Pacer"),
                 new Horse("Bublick")
         );
+
     }
 }
