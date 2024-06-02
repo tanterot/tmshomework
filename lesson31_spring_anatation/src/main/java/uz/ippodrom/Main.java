@@ -1,5 +1,6 @@
 package uz.ippodrom;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import uz.ippodrom.config.AppConfig;
 import uz.ippodrom.model.Horse;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         HorseService horseService = context.getBean(HorseService.class);
         RaceService raceService = context.getBean(RaceService.class);
         User user = context.getBean(User.class);
