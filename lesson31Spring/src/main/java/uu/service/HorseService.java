@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
+import uu.aspect.Benchmark;
 import uu.model.Horse;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.stream.IntStream;
 public class HorseService {
 
     private final List<Horse> horses;
-
+@Benchmark
     public void displayHorses() {
         System.out.println("List of horses:");
         IntStream.range(0, horses.size())

@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class BenchmarkAspect {
-    @Pointcut("execution(public * *..*(..))")
-    public void beforeAll(){
+    @Pointcut("@annotation(uu.aspect.Benchmark)")
+    public void aroundAll(){
 
     }
-    @Around("beforeAll()")
-    public Object logBefore(ProceedingJoinPoint joinPoint){
+    @Around("aroundAll()")
+    public Object logAround(ProceedingJoinPoint joinPoint){
         long start = System.nanoTime();
         Object result = null;
         try {
