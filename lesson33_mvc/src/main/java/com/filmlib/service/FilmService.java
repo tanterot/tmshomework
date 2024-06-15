@@ -1,13 +1,17 @@
 package com.filmlib.service;
 import com.filmlib.model.Film;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 @Service
 @Data
+@RequiredArgsConstructor
 public class FilmService {
-    DataBaseService service = new DataBaseService();
+
+    private final DataBaseService service;
+
     public void add(Film film) {
         service.add(film);
     }

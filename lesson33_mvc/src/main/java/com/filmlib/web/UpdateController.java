@@ -2,7 +2,6 @@ package com.filmlib.web;
 
 import com.filmlib.model.Film;
 import com.filmlib.service.FilmService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ import java.util.UUID;
 @RequestMapping("/film")
 @RequiredArgsConstructor
 public class UpdateController {
-    FilmService filmService = new FilmService();
+    private final FilmService filmService;
     @GetMapping("/update")
     public ModelAndView showUpdateForm(@RequestParam(name = "id") UUID id) {
         Film film = filmService.getById(id);
