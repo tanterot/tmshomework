@@ -3,17 +3,15 @@ package com.filmlib.model;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Film {
     private UUID id;
-    @NotNull
     private String name;
-    @NotNull
     private String description;
-    @NotNull
     private Integer year;
     private boolean isViewed;
 

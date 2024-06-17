@@ -2,8 +2,10 @@ package com.filmlib.service;
 
 import com.filmlib.model.Film;
 import lombok.Data;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -11,6 +13,7 @@ import java.util.UUID;
 @Data
 public class DataBaseService {
     private static List<Film> films = new ArrayList<>();
+    private ObjectProvider<Connection> connectionProvider;
 
     static {
         films.add(new Film("Titanic","Titanic is a 1997 American epic romantic disaster film directed, written, produced, and co-edited by James Cameron. Incorporating both historical and fictionalized aspects, it is based on accounts of the sinking of RMS Titanic in 1912. Leonardo DiCaprio and Kate Winslet star as members of different social classes who fall in love during the ship's maiden voyage."
