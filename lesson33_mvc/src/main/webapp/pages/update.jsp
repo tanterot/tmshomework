@@ -13,9 +13,6 @@
         Name <input name="name" type="text" class="form-control" value="${films.name}"><br>
         Description<input name="description" type="text" class="form-control" value="${films.description}"><br>
         Year<input name="year" type="number" class="form-control" value="${films.year}"><br>
-        <c:if test="${films.isViewed == true}">
-            Viewed <input type="checkbox" checked name="viewed">
-        </c:if>
         <input type="submit" value="update" class="btn btn-primary">
     </form>
 </div>

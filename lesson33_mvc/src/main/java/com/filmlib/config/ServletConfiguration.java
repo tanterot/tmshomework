@@ -8,15 +8,13 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class ServletConfiguration implements WebApplicationInitializer {
-    @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
 
-        var context = new AnnotationConfigWebApplicationContext();
-        DispatcherServlet dispatcherServlet =  new DispatcherServlet(context);
+        AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
+        rootContext.register(AppConfig.class);
 
-        context.register(AppConfig.class);
-
-        ServletRegistration.Dynamic registration  = servletContext.addServlet("dispatcher", dispatcherServlet);
+        DispatcherServlet dispatcherServlet = new DispatcherServlet(rootContext);
+        ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcherServlet", dispatcherServlet);
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
 

@@ -17,11 +17,14 @@ public class DataBaseService {
 
     static {
         films.add(new Film("Titanic","Titanic is a 1997 American epic romantic disaster film directed, written, produced, and co-edited by James Cameron. Incorporating both historical and fictionalized aspects, it is based on accounts of the sinking of RMS Titanic in 1912. Leonardo DiCaprio and Kate Winslet star as members of different social classes who fall in love during the ship's maiden voyage."
-                ,1995,true));
+                ,1995));
         films.add(new Film("RoboCop","RoboCop is a 1987 American science fiction action film directed by Paul Verhoeven and written by Edward Neumeier and Michael Miner"
-                ,1999,true));
+                ,1999));
     }
+    public Film filmFabric(String name,String description,Integer year){
+        return new Film (name,description,year);
 
+    }
     public void add(Film film){
         films.add(film);
     }
@@ -49,7 +52,6 @@ public class DataBaseService {
                 items.setName(film.getName());
                 items.setDescription(film.getDescription());
                 items.setYear(film.getYear());
-                items.setViewed(film.getIsViewed());
             }
         }
     }

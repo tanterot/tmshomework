@@ -7,10 +7,9 @@
 </head>
 <body>
 <form method="post" action="/film/save" class="form-group">
-    <input type="text" name="name" class="form-control" placeholder="Name"><br>
-    <input type="text" name="description" class="form-control" placeholder="Description"><br>
-    <input type="number" name="year" class="form-control" placeholder="Year"><br>
-    isViewed<input type="checkbox" name="isViewed" class="form-check" ><br>
+             <input type="text" name="name" class="form-control" placeholder="Name"><br>
+             <input type="text" name="description" class="form-control" placeholder="Description"><br>
+             <input type="number" name="year" class="form-control" placeholder="Year"><br>
     <input type="submit" name="save" class="btn btn-primary"><br>
 </form>
 <hr>

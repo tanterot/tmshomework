@@ -30,4 +30,9 @@ public class FilmService {
     public void update(Film film, UUID id) {
         service.update(film, id);
     }
+
+    public Film filmFabric(String name,String description,Integer year){
+        return service.filmFabric(name,description,year);
+
+    }
 }

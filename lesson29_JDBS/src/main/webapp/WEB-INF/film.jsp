@@ -14,8 +14,6 @@
     <input type="submit" name="save" class="btn btn-primary"><br>
 </form>
 <hr>
-<%--в задании необходимо было вывести только название фильма ,--%>
-<%--но я добавил и описание , что бы красивее смотрелись катрочки--%>
 <div class="row">
     <c:forEach items="${films}" var="films">
         <div class="col-sm-4">

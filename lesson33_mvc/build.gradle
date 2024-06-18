@@ -14,7 +14,6 @@ dependencies {
     implementation group: 'org.springframework', name: 'spring-jdbc', version: '6.1.9'
 
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
-    implementation group: 'org.hibernate', name: 'hibernate-validator', version: '8.0.1.Final'
 
     implementation group: 'org.springframework', name: 'spring-webmvc', version: '6.1.8'
     implementation group: 'org.springframework', name: 'spring-context', version: '6.1.8'
