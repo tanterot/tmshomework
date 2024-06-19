@@ -20,8 +20,8 @@ public class UserService implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         UserEntity user = new UserEntity();
         user.setId(UUID.randomUUID());
-        user.setUsername("test1");
-        user.setSalary(3000);
+        user.setUsername("test2");
+        user.setSalary(3500);
         user.setRole(Role.USER);
 
         Session session = sessionFactory.openSession();
