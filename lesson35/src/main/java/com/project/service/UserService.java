@@ -19,10 +19,9 @@ public class UserService implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         UserEntity user = new UserEntity();
-        user.setId(UUID.randomUUID());
-        user.setUsername("test2");
-        user.setSalary(3500);
-        user.setRole(Role.USER);
+        user.setUsername("test4");
+        user.setSalary(2000);
+        user.setRole(Role.ADMIN);
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();

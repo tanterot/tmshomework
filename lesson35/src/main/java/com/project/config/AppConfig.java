@@ -23,7 +23,7 @@ public class AppConfig {
         properties.put("hibernate.connection.password", "postgres");
         properties.put("hibernate.connection.driver_class", "org.postgresql.Driver");
         properties.put("hibernate.show_sql", true);
-        properties.put("hibernate.hbm2ddl.auto", "create");
+        properties.put("hibernate.hbm2ddl.auto", "update");
         configuration.addProperties(properties);
         configuration.addAnnotatedClass(UserEntity.class);
 
