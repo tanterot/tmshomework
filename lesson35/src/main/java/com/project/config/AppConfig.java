@@ -1,6 +1,7 @@
 package com.project.config;
 
-import com.project.domen.UserEntity;
+import com.project.domen.OrderEntity;
+import com.project.domen.PersonEntity;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,7 +26,8 @@ public class AppConfig {
         properties.put("hibernate.show_sql", true);
         properties.put("hibernate.hbm2ddl.auto", "update");
         configuration.addProperties(properties);
-        configuration.addAnnotatedClass(UserEntity.class);
+        configuration.addAnnotatedClass(PersonEntity.class);
+        configuration.addAnnotatedClass(OrderEntity.class);
 
         return configuration.buildSessionFactory();
 
