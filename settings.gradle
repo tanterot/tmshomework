@@ -29,4 +29,5 @@ include 'lesson28_SQL'
 include 'lesson29_JDBS'
 include 'lesson31_spring_anatation'
 include 'Lesson31'
+include 'lesson30_spring'
 
