@@ -9,8 +9,35 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Lesson1-3" />
+            <option value="$PROJECT_DIR$/Lesson10" />
+            <option value="$PROJECT_DIR$/Lesson11_String" />
+            <option value="$PROJECT_DIR$/Lesson12_exc" />
+            <option value="$PROJECT_DIR$/Lesson13_IO" />
+            <option value="$PROJECT_DIR$/Lesson14_list_fix" />
+            <option value="$PROJECT_DIR$/Lesson15_Set" />
+            <option value="$PROJECT_DIR$/Lesson16" />
+            <option value="$PROJECT_DIR$/Lesson4" />
+            <option value="$PROJECT_DIR$/Lesson5" />
+            <option value="$PROJECT_DIR$/Lesson6" />
+            <option value="$PROJECT_DIR$/Lesson7-INTERFACE" />
+            <option value="$PROJECT_DIR$/Lesson8_extends" />
+            <option value="$PROJECT_DIR$/Lesson9_OOP" />
+            <option value="$PROJECT_DIR$/home_task3" />
             <option value="$PROJECT_DIR$/hometask2" />
-            <option value="$PROJECT_DIR$/hometask3" />
+            <option value="$PROJECT_DIR$/lesson17_lambda" />
+            <option value="$PROJECT_DIR$/lesson18_stream" />
+            <option value="$PROJECT_DIR$/lesson19_20" />
+            <option value="$PROJECT_DIR$/lesson19_thred" />
+            <option value="$PROJECT_DIR$/lesson21_project_builder" />
+            <option value="$PROJECT_DIR$/lesson22_javaEE" />
+            <option value="$PROJECT_DIR$/lesson23_servlet" />
+            <option value="$PROJECT_DIR$/lesson24_html_css" />
+            <option value="$PROJECT_DIR$/lesson26_jsp" />
+            <option value="$PROJECT_DIR$/lesson27_postgres" />
+            <option value="$PROJECT_DIR$/lesson28_SQL" />
+            <option value="$PROJECT_DIR$/lesson29_JDBS" />
+            <option value="$PROJECT_DIR$/lesson31Spring" />
           </set>
         </option>
       </GradleProjectSettings>
