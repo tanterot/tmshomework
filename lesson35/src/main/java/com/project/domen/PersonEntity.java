@@ -19,7 +19,10 @@ public class PersonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     private String username;
+    private Integer age;
+
     private Integer salary;
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -30,6 +33,13 @@ public class PersonEntity {
     @Version
     private Integer version;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     private List<OrderEntity> orders = new ArrayList<>();
+
+    public void addOrder(OrderEntity order) {
+        orders.add(order);
+        order.setPerson(this);
+    }
+
+
 }

@@ -21,8 +21,8 @@ public class OrderController {
 
     @GetMapping
     public String getAllOrders(Model model) {
-        List<PersonEntity> persons = dataBaseService.getAllPersons();
-        model.addAttribute("persons", persons);
+        List<OrderEntity> allOrders = dataBaseService.getAllOrders();
+        model.addAttribute("orders", allOrders);
         return "orders";
 
     }
