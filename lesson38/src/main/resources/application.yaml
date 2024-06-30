@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: lesson38
+app:
+  login: user
+  key: password
