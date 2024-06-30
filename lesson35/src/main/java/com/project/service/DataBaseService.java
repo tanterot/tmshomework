@@ -129,7 +129,7 @@ public class DataBaseService {
         }
     }
 
-    public List<PersonEntity> getPersonByUsername(String username) {
+    public List<PersonEntity> findPersonByUsername(String username) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             List<PersonEntity> result = session
@@ -142,12 +142,14 @@ public class DataBaseService {
     }
 
     public List<PersonEntity> findPersonByAge(Integer age) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        List<PersonEntity> result = session.createQuery("from PersonEntity where age <:age", PersonEntity.class)
-                .setParameter("age", age).list();
-        transaction.commit();
-        session.close();
-        return result;
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            List<PersonEntity> result = session
+                    .createQuery("from PersonEntity where age <:age", PersonEntity.class)
+                    .setParameter("age", age)
+                    .list();
+            transaction.commit();
+            return result;
+        }
     }
 }

@@ -39,13 +39,13 @@ public class PersonController {
     }
 
     @GetMapping("/name")
-    public String getByName(@RequestParam("username") String username) {
-        List<PersonEntity> persons = dataBaseService.getPersonByUsername(username);
+    public String findByName(@RequestParam("username") String username) {
+        List<PersonEntity> persons = dataBaseService.findPersonByUsername(username);
         return "";
     }
 
     @GetMapping("/age")
-    public String findPerson(@RequestParam(name = "age") Integer age) {
+    public String findPerson(@RequestParam("age") Integer age) {
         List<PersonEntity> persons = dataBaseService.findPersonByAge(age);
         return "";
     }
