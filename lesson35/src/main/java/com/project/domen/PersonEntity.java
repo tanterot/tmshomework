@@ -20,6 +20,7 @@ public class PersonEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String username;
+    private Integer age;
     private Integer salary;
     @Enumerated(EnumType.STRING)
     private Role role;

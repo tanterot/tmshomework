@@ -128,4 +128,26 @@ public class DataBaseService {
             return orderEntity.getId();
         }
     }
+
+    public List<PersonEntity> getPersonByUsername(String username) {
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            List<PersonEntity> result = session
+                    .createQuery("from PersonEntity where username = :username", PersonEntity.class)
+                    .setParameter("username", username)
+                    .list();
+            transaction.commit();
+            return result;
+        }
+    }
+
+    public List<PersonEntity> findPersonByAge(Integer age) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<PersonEntity> result = session.createQuery("from PersonEntity where age <:age", PersonEntity.class)
+                .setParameter("age", age).list();
+        transaction.commit();
+        session.close();
+        return result;
+    }
 }

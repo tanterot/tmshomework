@@ -23,28 +23,28 @@ public class OrderController {
     public String getAllOrders(Model model) {
         List<PersonEntity> persons = dataBaseService.getAllPersons();
         model.addAttribute("persons", persons);
-        return "orders";
+        return "";
 
     }
 
     @DeleteMapping
     public String deleteOrder(@RequestParam("id") UUID id) {
         dataBaseService.deleteOrder(id);
-        return "redirect:/orders";
+        return "";
     }
 
     @PostMapping
     public String saveOrder(@ModelAttribute("order") OrderEntity order) {
         dataBaseService.saveOrder(order);
-        return "redirect:/orders";
+        return "";
     }
 
     @GetMapping("/get")
-    public ModelAndView getOrder(@RequestParam("description") String description) {
+    public String getOrder(@RequestParam("description") String description) {
         UUID id = dataBaseService.getIdByDescription(description);
         var order = dataBaseService.getOrder(id);
         ModelAndView modelAndView = new ModelAndView("person");
         modelAndView.addObject("order", order);
-        return modelAndView;
+        return "";
     }
 }
