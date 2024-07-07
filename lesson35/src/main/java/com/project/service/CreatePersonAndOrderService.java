@@ -21,21 +21,25 @@ public class CreatePersonAndOrderService implements InitializingBean {
         person1.setUsername("test1");
         person1.setSalary(2300);
         person1.setRole(Role.USER);
+        person1.setAge(10);
 
         PersonEntity person2 = new PersonEntity();
         person2.setUsername("test2");
         person2.setSalary(2500);
         person2.setRole(Role.USER);
+        person2.setAge(20);
 
         PersonEntity person3 = new PersonEntity();
         person3.setUsername("test3");
         person3.setSalary(2100);
         person3.setRole(Role.ADMIN);
+        person3.setAge(30);
 
         PersonEntity person4 = new PersonEntity();
         person4.setUsername("test4");
         person4.setSalary(5000);
         person4.setRole(Role.ADMIN);
+        person4.setAge(40);
 
         OrderEntity orderEntity = new OrderEntity();
         orderEntity.setPerson(person1);
