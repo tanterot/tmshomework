@@ -37,8 +37,11 @@ public class OrderEntity {
     private String description;
 
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "person_id")
     @ToString.Exclude
     private PersonEntity person;
+
+
+
 }
