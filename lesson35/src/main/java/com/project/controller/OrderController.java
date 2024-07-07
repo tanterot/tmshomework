@@ -20,7 +20,7 @@ public class OrderController {
     private final DataBaseService dataBaseService;
 
     @GetMapping
-    public String getAllOrders(Model model) {
+    public String getAllOrders(Model )
         List<PersonEntity> persons = dataBaseService.getAllPersons();
         model.addAttribute("persons", persons);
         return "";
