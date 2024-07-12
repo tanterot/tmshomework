@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th:="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/my.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-4 text-center">Wellcome to over shop</h1>
+    <div class="form-group">
+        <form th:action="@{/order}" method="get">
+            <input type="submit" value="home page" class="btn btn-primary">
+        </form>
+    </div>
+    <form th:action="@{/order}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="count">Count:</label>
+            <input type="number" id="count" name="count" class="form-control">
+        </div>
+        <input type="submit" value="add" class="btn btn-primary">
+    </form>
+    <hr>
+
+    <form th:action="@{/order/id}" method="post">
+        ID for searching: <input type="text" name="id"><input type="submit" name="find" class="btn btn-primary">
+    </form>
+    <table>
+        <tr th:each="ord: ${orders}">
+            <div th:if="${ord.isDeleted == false}">
+                <td th:text="${ord.name}"></td>
+                <td th:text="${ord.cost}"></td>
+                <td th:text="${ord.count}"></td>
+                <td><a th:href="@{/order/update(id=${ord.getId()})}" class="btn btn-warning">update</a></td>
+                <td><a th:href="@{/order/deleted(id=${ord.getId()})}" class="btn btn-danger">deleted the order</a></td>
+            </div>
+            <hr>
+            <div th:if="${ord.isDeleted == true}">
+                <td th:text="${ord.name}" class="graycolor"></td>
+                <td th:text="${ord.cost}" class="graycolor"></td>
+                <td th:text="${ord.count}" class="graycolor"></td>
+                <td><a th:href="@{/order/deleted(id=${ord.getId()})}" class="btn btn-success">return the order</a></td>
+            </div>
+            </td>
+        </tr>
+    </table>
+    <hr>
+</div>
+</body>
+</html>
