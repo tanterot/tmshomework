@@ -63,17 +63,4 @@ public class OrderController {
         return "home";
 
     }
-
-//    @GetMapping("/search")
-//    public String searchProducts(SearchDto searchDto, Model model) {
-//        List<ProductDto> productDtos = productMapper.toProductDtoList(productsService.getAllProducts(searchDto));
-//        model.addAttribute("searchDto", searchDto);
-//        model.addAttribute("products", productDtos);
-//        return "products";
-
-//@PostMapping("/search")
-//public String search(SearchDto dto, Model model) {
-//    var result = orderServis.search(dto);
-//    model.addAttribute("orders", result);
-//    return "home";
 }
