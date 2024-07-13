@@ -12,5 +12,9 @@ import java.util.UUID;
 
 public class SearchDto {
     private UUID id;
-    private String search;
+    private String name;
+    private Boolean isDelivery;
+    private Integer cost;
+    private Integer count;
+
 }

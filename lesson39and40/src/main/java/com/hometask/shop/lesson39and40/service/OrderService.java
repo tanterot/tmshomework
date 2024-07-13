@@ -18,4 +18,7 @@ public interface OrderService {
     OrderDto update(OrderDto dto);
 
     OrderDto updateFieldIsDeleted(UUID id);
+
+    List<OrderDto> search(SearchDto dto);
+
 }

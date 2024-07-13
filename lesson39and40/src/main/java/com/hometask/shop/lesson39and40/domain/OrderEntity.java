@@ -29,5 +29,7 @@ public class OrderEntity {
     private Integer cost;
     @Column(name = "is_deleted")
     private Boolean isDeleted;
+    @Column(name = "is_delivery")
+    private Boolean isDelivery;
 
 }

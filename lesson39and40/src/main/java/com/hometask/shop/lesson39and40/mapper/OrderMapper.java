@@ -10,12 +10,10 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
 
-    @Mapping(target = "cost", constant = "0")
     @Mapping(target = "isDeleted", constant = "false")
     OrderEntity toEntity(OrderDto dto);
 
     OrderDto toDto(OrderEntity entity);
 
     List<OrderDto> toDtoList(List<OrderEntity> entityList);
-
 }

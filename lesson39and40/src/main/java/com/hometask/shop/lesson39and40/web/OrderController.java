@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -29,14 +30,6 @@ public class OrderController {
         service.createOrder(dto);
         model.addAttribute("orders", service.findAll());
         return "home";
-    }
-
-    @PostMapping("/id")
-    public String id(SearchDto dto, Model model) {
-        var id = service.findById(dto);
-        model.addAttribute("orders", id);
-        return "home";
-
     }
 
     @PostMapping("/update")
@@ -63,4 +56,24 @@ public class OrderController {
         return "redirect:/order";
     }
 
+    @PostMapping("/search")
+    public String search(SearchDto dto, Model model) {
+        List<OrderDto> search = service.search(dto);
+        model.addAttribute("orders", search);
+        return "home";
+
+    }
+
+//    @GetMapping("/search")
+//    public String searchProducts(SearchDto searchDto, Model model) {
+//        List<ProductDto> productDtos = productMapper.toProductDtoList(productsService.getAllProducts(searchDto));
+//        model.addAttribute("searchDto", searchDto);
+//        model.addAttribute("products", productDtos);
+//        return "products";
+
+//@PostMapping("/search")
+//public String search(SearchDto dto, Model model) {
+//    var result = orderServis.search(dto);
+//    model.addAttribute("orders", result);
+//    return "home";
 }

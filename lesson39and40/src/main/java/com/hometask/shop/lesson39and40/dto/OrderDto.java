@@ -16,4 +16,5 @@ public class OrderDto {
     private Integer count;
     private Integer cost;
     private Boolean isDeleted;
+    private Boolean isDelivery;
 }
