@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Update</h1>
+    <form th:action="@{/order/update(id=${order.getId()})}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:value="${order.getName()}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="price">Cost:</label>
+            <input type="number" id="price" name="price" th:value="${order.getCost()}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="count">Count:</label>
+            <input type="number" id="count" name="count" th:value="${order.getCount()}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+</body>
+</html>
